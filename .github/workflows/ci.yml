@@ -1,0 +1,64 @@
+name: Verificación Arduino
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  host-tests:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Obtener el código
+        uses: actions/checkout@v4
+
+      - name: Compilar y ejecutar pruebas de lógica
+        run: |
+          mkdir -p build
+          g++ -std=c++11 -Wall -Wextra -Werror \
+            -Itest/host -Isrc \
+            test/host/test_main.cpp \
+            src/HelioTypes.cpp src/HelioController.cpp \
+            src/SolarCalculator.cpp \
+            -o build/helio-tests
+          ./build/helio-tests
+
+  compile:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        fqbn:
+          - arduino:avr:uno
+          - arduino:avr:mega
+
+    steps:
+      - name: Obtener el código
+        uses: actions/checkout@v4
+
+      - name: Instalar Arduino CLI
+        uses: arduino/setup-arduino-cli@v2
+        with:
+          version: 1.x
+
+      - name: Instalar el core AVR
+        run: |
+          arduino-cli core update-index
+          arduino-cli core install arduino:avr
+
+      - name: Compilar ejemplos y firmware
+        env:
+          FQBN: ${{ matrix.fqbn }}
+        run: |
+          set -euo pipefail
+          for sketch in \
+            examples/BasicDualAxis \
+            examples/CompleteController \
+            examples/SerialController \
+            examples/SolarPosition
+          do
+            arduino-cli compile --warnings all --fqbn "$FQBN" \
+              --library "$GITHUB_WORKSPACE" "$sketch"
+          done

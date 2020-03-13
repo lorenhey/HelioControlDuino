@@ -1,0 +1,13 @@
+.arduino15/
+.arduino-data/
+.tools/
+build/
+*.hex
+*.elf
+*.map
+*.bin
+*.zip
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store

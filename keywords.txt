@@ -1,0 +1,16 @@
+HelioControlDuino	KEYWORD1
+HelioController	KEYWORD1
+ServoAxis	KEYWORD1
+FourLdrSensor	KEYWORD1
+DigitalSafetyInputs	KEYWORD1
+SerialConsole	KEYWORD1
+SolarCalculator	KEYWORD1
+begin	KEYWORD2
+update	KEYWORD2
+setMode	KEYWORD2
+setManualTarget	KEYWORD2
+calculate	KEYWORD2
+AUTOMATIC	LITERAL1
+PARK	LITERAL1
+STOW	LITERAL1
+STOPPED	LITERAL1
