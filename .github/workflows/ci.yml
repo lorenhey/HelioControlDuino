@@ -43,10 +43,11 @@ jobs:
         with:
           version: 1.x
 
-      - name: Instalar el core AVR
+      - name: Instalar el core AVR y dependencias
         run: |
           arduino-cli core update-index
           arduino-cli core install arduino:avr
+          arduino-cli lib install Servo
 
       - name: Compilar ejemplos y firmware
         env:
