@@ -1,5 +1,9 @@
 # HelioControlDuino
 
+[![Verificación Arduino](https://github.com/lorenhey/HelioControlDuino/actions/workflows/ci.yml/badge.svg)](https://github.com/lorenhey/HelioControlDuino/actions/workflows/ci.yml)
+[![Versión](https://img.shields.io/github/v/release/lorenhey/HelioControlDuino?display_name=tag)](https://github.com/lorenhey/HelioControlDuino/releases)
+[![Licencia MIT](https://img.shields.io/badge/licencia-MIT-blue.svg)](LICENSE)
+
 Controlador autónomo y configurable para seguidores solares construidos con
 microcontroladores compatibles con Arduino. Funciona sin Internet ni servicios
 en la nube y no requiere dependencias externas, salvo la biblioteca oficial
@@ -110,6 +114,10 @@ La biblioteca sigue el formato 1.5 de Arduino y utiliza solamente API comunes
 de Arduino y `Servo`. El flujo de integración continua compila los ejemplos y
 el firmware para Arduino Uno y Mega 2560.
 
+Las arquitecturas declaradas coinciden con las que admite la biblioteca
+oficial `Servo`: AVR, megaAVR, SAM, SAMD, nRF52, STM32F4, Mbed, Renesas y
+Zephyr. La matriz de validación de referencia se ejecuta en Uno y Mega 2560.
+
 ## Seguridad
 
 HelioControlDuino es un controlador de referencia y no reemplaza protecciones
@@ -122,3 +130,7 @@ motor de potencia directamente a un pin del microcontrolador.
 ## Licencia
 
 Distribuido bajo la [Licencia MIT](LICENSE).
+
+Las contribuciones son bienvenidas. Consultá [CONTRIBUTING.md](CONTRIBUTING.md)
+para conocer el flujo de desarrollo y [SECURITY.md](SECURITY.md) para informar
+problemas de seguridad de forma privada.

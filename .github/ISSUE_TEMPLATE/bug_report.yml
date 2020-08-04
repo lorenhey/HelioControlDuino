@@ -1,0 +1,58 @@
+name: Reporte de falla
+description: Informar un comportamiento incorrecto reproducible
+title: "[Falla]: "
+labels:
+  - bug
+body:
+  - type: markdown
+    attributes:
+      value: |
+        No publiques vulnerabilidades aquí. Para problemas de seguridad usá la pestaña Security.
+  - type: input
+    id: board
+    attributes:
+      label: Placa
+      description: Modelo exacto y core instalado.
+      placeholder: Arduino Uno, arduino:avr 1.8.8
+    validations:
+      required: true
+  - type: input
+    id: version
+    attributes:
+      label: Versión de HelioControlDuino
+      placeholder: 1.0.0 o commit
+    validations:
+      required: true
+  - type: textarea
+    id: hardware
+    attributes:
+      label: Hardware y configuración
+      description: Sensores, actuadores, fuente, pines y cambios en config.h.
+    validations:
+      required: true
+  - type: textarea
+    id: behavior
+    attributes:
+      label: Comportamiento observado
+      description: Incluí las órdenes y la salida de STATUS.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Comportamiento esperado
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Pasos para reproducir
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Seguridad
+      options:
+        - label: Probé con los actuadores desacoplados o con un corte físico disponible.
+          required: true

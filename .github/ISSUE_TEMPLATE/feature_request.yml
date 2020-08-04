@@ -1,0 +1,31 @@
+name: Propuesta de mejora
+description: Proponer una función o compatibilidad nueva
+title: "[Mejora]: "
+labels:
+  - enhancement
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Necesidad
+      description: Describí el problema concreto que querés resolver.
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Propuesta
+      description: Explicá el comportamiento esperado.
+    validations:
+      required: true
+  - type: textarea
+    id: hardware
+    attributes:
+      label: Hardware involucrado
+      description: Placa, sensores, actuadores y drivers relevantes.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternativas consideradas

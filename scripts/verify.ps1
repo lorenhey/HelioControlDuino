@@ -5,6 +5,7 @@ $root = Split-Path -Parent $PSScriptRoot
 
 & $cli.Source core update-index
 & $cli.Source core install arduino:avr
+& $cli.Source lib install Servo
 
 $targets = @(
     'examples/BasicDualAxis',
