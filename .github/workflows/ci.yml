@@ -39,7 +39,7 @@ jobs:
           echo "$HOME/.local/bin" >> "$GITHUB_PATH"
 
       - name: Validar la biblioteca
-        run: arduino-lint --compliance strict --library-manager submit .
+        run: arduino-lint --compliance strict --library-manager submit "$GITHUB_WORKSPACE"
 
   compile:
     runs-on: ubuntu-latest
